@@ -1,6 +1,16 @@
-const App = (props) => {
+import { useState } from 'react'
 
-  const {counter} = props
+const App = () => {
+
+  const [ counter, setCounter ] = useState(0)
+
+
+  setTimeout(
+    () => setCounter(counter + 1),
+    1000
+  )
+
+  console.log('rendering...')
   return (
     <div>{counter}</div>
   )
