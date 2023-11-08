@@ -14,19 +14,19 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  const handleGoodClick = (props) => {
+  const handleGoodClick = () => {
     const updatedGood = good + 1
     setGood(updatedGood)
     console.log('good: ', updatedGood)
   }
 
-  const handleNeutralClick = (props) => {
+  const handleNeutralClick = () => {
     const updatedNeutral = neutral + 1
     setNeutral(updatedNeutral)
     console.log('neutral: ', updatedNeutral)
   }
 
-  const handleBadClick = (props) => {
+  const handleBadClick = () => {
     const updatedBad = bad + 1
     setBad(updatedBad)
     console.log('bad: ', updatedBad)
@@ -42,6 +42,9 @@ const App = () => {
       good: {good} <br></br>
       neutral: {neutral} <br></br>
       bad: {bad} <br></br>
+      all: {good + neutral + bad} <br></br>
+      average: {good * 1 + bad * (-1)} <br></br>
+      positive: {good / (good + neutral + bad) * 100}  %
     </div>
   )
 }
