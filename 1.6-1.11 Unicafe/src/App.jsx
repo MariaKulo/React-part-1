@@ -13,6 +13,14 @@ const Button = ({ handleClick, text }) => {
     const all = props.good + props.neutral + props.bad
     console.log(props)
 
+    if (all === 0) {
+      return (
+        <div>
+          <p>No feedback given</p>
+        </div>
+      )
+    }
+
     return (
       <div>
         <div>good: {props.good} </div>
@@ -22,7 +30,7 @@ const Button = ({ handleClick, text }) => {
         <div>average: {(props.good * 1 + props.bad * (-1)) / all}</div>
         <div>positive: {(props.good / all) * 100 } %</div>
       </div>
-    )
+      )
   }
 
 const App = () => {
@@ -34,19 +42,16 @@ const App = () => {
   const handleGoodClick = () => {
     const updatedGood = good + 1
     setGood(updatedGood)
-    console.log('good: ', updatedGood)
   }
 
   const handleNeutralClick = () => {
     const updatedNeutral = neutral + 1
     setNeutral(updatedNeutral)
-    console.log('neutral: ', updatedNeutral)
   }
 
   const handleBadClick = () => {
     const updatedBad = bad + 1
     setBad(updatedBad)
-    console.log('bad: ', updatedBad)
   }
 
   return (
